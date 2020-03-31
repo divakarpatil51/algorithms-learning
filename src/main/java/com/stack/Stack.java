@@ -18,9 +18,9 @@ public class Stack<T> {
 	/*
 	*	Remove the top of the stack.
 	*/
-	public StackNode<T> pop(){
+	public StackNode<T> pop() throws Exception {
 		if(head == null){
-			throw Exception("Empty Stack");
+			throw new Exception("Empty Stack");
 		}
 		head = head.previous;
 		return head;
@@ -29,9 +29,9 @@ public class Stack<T> {
 	/*
 	*	Get the top of the stack.
 	*/
-	public T peek(){
+	public T peek() throws Exception{
 		if(head == null){
-			throw Exception("Empty Stack");
+			throw new Exception("Empty Stack");
 		}
 		return head.data;
 	}
@@ -40,7 +40,7 @@ public class Stack<T> {
 		return head == null;
 	}
 
-	private static StackNode<T> {
+	private static class StackNode<T> {
 		
 		T data;
 		StackNode<T> previous;

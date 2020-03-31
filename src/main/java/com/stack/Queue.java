@@ -1,6 +1,6 @@
 package com.stack;
 
-public class Queue {
+public class Queue<T> {
 	
 	private QueueNode<T> first;
 	private QueueNode<T> last;
@@ -17,7 +17,7 @@ public class Queue {
 		}
 	}
 	
-	public void remove(){
+	public void remove() throws Exception{
 		if(first == null){
 			throw new Exception("Empty queue");
 		}
@@ -28,7 +28,7 @@ public class Queue {
 		}
 	}
 	
-	public T peek(){
+	public T peek() throws Exception{
 		if(first == null){
 			throw new Exception("Empty queue");
 		}
@@ -36,9 +36,6 @@ public class Queue {
 	}
 	
 	public boolean isEmpty() {
-		if(first == null){
-			throw new Exception("Empty queue");
-		}
 		return first == null;
 	}
 	
@@ -52,7 +49,7 @@ public class Queue {
 		return size;
 	}
 	
-	static QueueNode<T> {
+	static class QueueNode<T> {
 	
 		QueueNode<T> next;
 		T data;
